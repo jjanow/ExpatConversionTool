@@ -1,0 +1,57 @@
+﻿<Window x:Class="ExpatConversionTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpatConversionTool"
+        mc:Ignorable="d"
+        Title="Expat Conversion Tool" Height="400" Width="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- Temperature Conversion Section -->
+            <GroupBox Header="Temperature Conversion" Margin="0,0,0,10">
+                <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="TempInput" Width="100" Height="25" Margin="0,0,10,0"/>
+                        <ComboBox x:Name="TempUnit" Width="150" Height="25" Margin="0,0,10,0">
+                            <ComboBoxItem Content="Celsius to Fahrenheit"/>
+                            <ComboBoxItem Content="Fahrenheit to Celsius"/>
+                        </ComboBox>
+                        <Button Content="Convert" Width="75" Height="25" Click="ConvertTemperature"/>
+                    </StackPanel>
+                    <Label x:Name="TempResult" Content="Result:" Margin="10,5,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Metric to Imperial Conversion Section -->
+            <GroupBox Header="Metric to Imperial Conversion" Margin="0,0,0,10">
+                <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="MetricInput" Width="100" Height="25" Margin="0,0,10,0"/>
+                        <ComboBox x:Name="MetricUnit" Width="150" Height="25" Margin="0,0,10,0">
+                            <ComboBoxItem Content="Kilometers to Miles"/>
+                            <ComboBoxItem Content="Kilograms to Pounds"/>
+                            <!-- Add more units as needed -->
+                        </ComboBox>
+                        <Button Content="Convert" Width="75" Height="25" Click="ConvertMetric"/>
+                    </StackPanel>
+                    <Label x:Name="MetricResult" Content="Result:" Margin="10,5,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Time Display Section -->
+            <GroupBox Header="Time Display">
+                <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Local Time (UK):" Width="120"/>
+                        <Label x:Name="UKTimeLabel" Content="--:--:--"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="US Time (EST):" Width="120"/>
+                        <Label x:Name="ESTTimeLabel" Content="--:--:--"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
